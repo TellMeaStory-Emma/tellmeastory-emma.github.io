@@ -1,0 +1,6 @@
+App Name: احكي لي حكاية
+Google Play: https://play.google.com/store/apps/details?id=com.mycompany.tellmeastory
+Amazon Appstore: https://www.amazon.com/gp/product/B0GZSKZRDT
+Contact Email: Hikaya.support@gmail.com
+Website Language: Arabic
+Website Direction: RTL
