@@ -59,7 +59,7 @@ h1 span{color:var(--green)}
 /* Full colored age boxes */
 .age-feature{
   display:grid;
-  grid-template-columns:190px minmax(0,1fr);
+  grid-template-columns:205px minmax(0,1fr);
   gap:24px;
   align-items:center;
   max-width:900px;
@@ -71,11 +71,12 @@ h1 span{color:var(--green)}
 }
 .age-feature img{
   width:100%;
-  aspect-ratio:3/4;
-  object-fit:cover;
+  height:auto;
+  object-fit:contain;
+  object-position:top center;
   border-radius:16px;
   box-shadow:0 8px 20px #493b491f;
-  background:#fff;
+  background:#fffaf2;
   display:block;
 }
 .age-content{min-width:0}
@@ -95,19 +96,18 @@ h1 span{color:var(--green)}
 .age-feature--sky .age-label,.age-feature--sky h3{color:var(--sky-ink)}
 .age-feature--sky p{color:var(--sky-sub)}
 
-/* Two rows of story illustrations (3 top + 3 bottom) */
-.art-rows{display:flex;flex-direction:column;gap:26px;padding:10px 0 6px}
-.art-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-.art-card{
-  padding:10px;background:#fff;border:1px solid var(--line);
-  border-radius:18px;box-shadow:var(--shadow);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.art-card:hover{transform:translateY(-4px)}
-.art-card img{
-  display:block;width:100%;height:auto;max-height:260px;
-  object-fit:contain;border-radius:12px;background:#faf6ef;
-}
+/* Stacked fan of 3 illustrations above the heading */
+.art-fan{display:flex;align-items:center;justify-content:center;gap:0;min-height:280px;padding:12px 0 28px}
+.art-card{width:min(31%,300px);padding:9px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.art-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;border-radius:12px;background:#faf6ef}
+.art-card:nth-child(1){transform:rotate(-8deg) translateX(-12px)}
+.art-card:nth-child(2){z-index:2;transform:translateY(-12px)}
+.art-card:nth-child(3){transform:rotate(8deg) translateX(12px)}
+
+/* Second set of 3 story illustrations kept clean */
+.art-row-second{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:28px 0 10px}
+.art-tile{padding:9px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.art-tile img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;border-radius:12px;background:#faf6ef}
 
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
 .feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;text-align:center;box-shadow:0 8px 22px #493b4909}
@@ -150,17 +150,16 @@ h1 span{color:var(--green)}
 footer{text-align:center;padding:24px;color:#82788a;font-size:.88rem}
 
 @media(max-width:850px){
-  .art-row{grid-template-columns:repeat(2,1fr);gap:16px}
   .gallery{grid-template-columns:repeat(2,1fr)}
-  .features{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
-  .age-feature{grid-template-columns:150px minmax(0,1fr);gap:18px;padding:16px}
+  .features,.art-row-second{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .age-feature{grid-template-columns:160px minmax(0,1fr);gap:18px;padding:16px}
 }
 @media(max-width:560px){
   html{font-size:17.5px}.wrap{width:calc(100% - 28px)}.hero{padding:28px 14px 48px}.logo{max-height:190px}
   .section{padding:56px 0}.age-tabs{gap:8px}.age-tab{padding:9px 13px;font-size:.9rem;flex-wrap:wrap;justify-content:center}
-  .age-feature{grid-template-columns:105px minmax(0,1fr);gap:12px;padding:12px;border-radius:18px}
+  .age-feature{grid-template-columns:115px minmax(0,1fr);gap:12px;padding:12px;border-radius:18px}
   .age-feature h3{font-size:1.08rem}.age-feature p{font-size:.88rem}
-  .art-row{grid-template-columns:1fr;gap:14px}.art-card{padding:8px;border-radius:14px}
+  .art-fan{min-height:190px}.art-card{padding:5px;border-radius:12px}
   .gallery{grid-template-columns:1fr;gap:18px;max-width:340px}.shot-frame{padding:8px;border-radius:16px}
 }
 </style>
@@ -227,19 +226,18 @@ footer{text-align:center;padding:24px;color:#82788a;font-size:.88rem}
 
 <section class="section purple" id="art">
  <div class="wrap">
+  <div class="art-fan">
+   <div class="art-card"><img src="./story_illustrations_04/story_01.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
+   <div class="art-card"><img src="./story_illustrations_04/story_07.png" alt="مشهد مرسوم من إحدى الحكايات"></div>
+   <div class="art-card"><img src="./story_illustrations_04/story_09.jpeg" alt="مشهد مرسوم من إحدى الحكايات"></div>
+  </div>
+
   <div class="head"><div class="eyebrow">من صفحات الحكايات</div><h2>كل رسمة تخبئ حكاية</h2><p>مشاهد مصوّرة ترافق الأحداث وتترك للخيال مساحة ليكمل التفاصيل.</p></div>
 
-  <div class="art-rows">
-   <div class="art-row">
-    <div class="art-card"><img src="./story_illustrations_04/story_01.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
-    <div class="art-card"><img src="./story_illustrations_04/story_07.png" alt="مشهد مرسوم من إحدى الحكايات"></div>
-    <div class="art-card"><img src="./story_illustrations_04/story_09.jpeg" alt="مشهد مرسوم من إحدى الحكايات"></div>
-   </div>
-   <div class="art-row">
-    <div class="art-card"><img src="./story_illustrations_04/story_02.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
-    <div class="art-card"><img src="./story_illustrations_04/story_04.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
-    <div class="art-card"><img src="./story_illustrations_04/story_08.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
-   </div>
+  <div class="art-row-second">
+   <div class="art-tile"><img src="./story_illustrations_04/story_02.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
+   <div class="art-tile"><img src="./story_illustrations_04/story_04.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
+   <div class="art-tile"><img src="./story_illustrations_04/story_08.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
   </div>
 
   <div class="features">
@@ -257,7 +255,7 @@ footer{text-align:center;padding:24px;color:#82788a;font-size:.88rem}
   <div class="video-actions">
    <a class="watch-direct" href="https://youtube.com/shorts/6QaM2NCJC-g" target="_blank" rel="noopener noreferrer">مشاهدة الفيديو مباشرة على YouTube ↗</a>
   </div>
-  <p class="video-note">فيديو واحد فقط — بلا جولة تعريفية أو شرح لطريقة الاستخدام.</p>
+  <p class="video-note"></p>
  </div>
 </section>
 
