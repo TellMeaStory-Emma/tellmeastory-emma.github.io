@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f0e5">
+<meta name="description" content="احكي لي حكاية: قصص أطفال مصوّرة برسوم مائية هادئة وحكايات تُروى بصوت دافئ.">
+<title>احكي لي حكاية | قصص أطفال مصوّرة</title>
+<style>
+:root{
+  --paper:#f6f0e5;--cream:#fffaf2;--ink:#40364b;--muted:#675e70;
+  --purple:#70518c;--purple-dark:#503766;--green:#789477;
+  --orange:#df9b59;--line:#e7ddcf;--shadow:0 18px 48px rgba(55,40,65,.12);
+
+  /* Full box colors for the 3 age groups */
+  --mint-bg:#e3f5eb;--mint-border:#bfe6d0;--mint-ink:#1d5937;--mint-sub:#2f6f4a;
+  --lilac-bg:#efe7f8;--lilac-border:#d7c7ec;--lilac-ink:#9a600e;--lilac-sub:#6c4e82;
+  --sky-bg:#e3f2fd;--sky-border:#c3dff5;--sky-ink:#16325b;--sky-sub:#2d5385;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:19px}
+body{margin:0;color:var(--ink);font-family:Tahoma,Arial,sans-serif;font-size:1rem;line-height:1.85;background:#fbf9f5}
+a{color:inherit}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+
+.hero{position:relative;overflow:hidden;text-align:center;padding:38px 20px 66px;background:linear-gradient(135deg,#f4edf7 0%,#fbf5e9 52%,#eef3e9 100%);border-bottom:1px solid var(--line)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none;opacity:.28}
+.hero:before{width:280px;height:280px;background:#d9c9e5;top:-140px;right:-70px}
+.hero:after{width:240px;height:240px;background:#f0c99e;bottom:-150px;left:-65px}
+.hero-inner{position:relative;z-index:1}
+.logo{display:block;width:min(500px,86vw);max-height:245px;object-fit:contain;margin:0 auto 15px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-weight:700;font-size:1rem}
+.eyebrow:before,.eyebrow:after{content:"";width:25px;height:2px;background:var(--orange);border-radius:5px}
+h1,h2{font-family:Georgia,"Times New Roman",Tahoma,serif}
+h1{font-size:clamp(2.1rem,4.5vw,3.5rem);line-height:1.3;margin:12px auto;color:var(--purple-dark)}
+h1 span{color:var(--green)}
+.lead{max-width:720px;margin:0 auto 26px;color:var(--muted);font-size:1.12rem}
+.stores{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.store{display:flex;align-items:center;gap:10px;direction:ltr;text-align:left;text-decoration:none;background:#171717;color:#fff;padding:10px 18px;border:1px solid #333;border-radius:13px;min-width:205px;box-shadow:0 8px 20px #493b4922;transition:.2s}
+.store:hover{transform:translateY(-3px)}
+.store svg{width:29px;height:29px;flex:none}
+.store small{display:block;color:#d5d0d8;font:600 .62rem Arial,sans-serif;text-transform:uppercase;line-height:1.3}
+.store b{display:block;font:700 1rem Arial,sans-serif}
+.note{color:#81758a;font-size:.9rem;margin:16px 0 0}
+
+.section{padding:76px 0}
+.section.light{background:var(--cream);border-block:1px solid var(--line)}
+.section.purple{background:#f0eaf4}
+.head{text-align:center;max-width:760px;margin:0 auto 38px}
+.head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--purple-dark);margin:8px 0}
+.head p{color:var(--muted);margin:0}
+
+/* Neutral clean age tabs */
+.age-tabs{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 auto 30px}
+.age-tab{display:flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px #493b490a;font-weight:700;color:var(--ink);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.age-tab:hover{transform:translateY(-2px);box-shadow:0 8px 20px #493b4914}
+.age-tab span{font-size:.85rem;font-weight:400;color:var(--muted)}
+
+/* Full colored age boxes */
+.age-feature{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:24px;
+  align-items:center;
+  max-width:900px;
+  margin:0 auto 22px;
+  padding:18px 22px;
+  border-radius:24px;
+  border:1.5px solid var(--line);
+  box-shadow:0 10px 28px #493b490e;
+}
+.age-feature img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:16px;
+  box-shadow:0 8px 20px #493b491f;
+  background:#fff;
+  display:block;
+}
+.age-content{min-width:0}
+.age-feature h3{font-size:1.45rem;margin:4px 0 6px}
+.age-feature p{margin:0;line-height:1.8}
+.age-feature .age-label{font-size:.92rem;font-weight:700;display:inline-block;margin-bottom:2px}
+
+.age-feature--mint{background:var(--mint-bg);border-color:var(--mint-border);color:var(--mint-ink)}
+.age-feature--mint .age-label,.age-feature--mint h3{color:var(--mint-ink)}
+.age-feature--mint p{color:var(--mint-sub)}
+
+.age-feature--lilac{background:var(--lilac-bg);border-color:var(--lilac-border);color:var(--lilac-ink)}
+.age-feature--lilac .age-label,.age-feature--lilac h3{color:var(--lilac-ink)}
+.age-feature--lilac p{color:var(--lilac-sub)}
+
+.age-feature--sky{background:var(--sky-bg);border-color:var(--sky-border);color:var(--sky-ink)}
+.age-feature--sky .age-label,.age-feature--sky h3{color:var(--sky-ink)}
+.age-feature--sky p{color:var(--sky-sub)}
+
+.art-fan{display:flex;align-items:center;justify-content:center;gap:0;min-height:300px;padding:20px 0}
+.art-card{width:min(31%,300px);padding:9px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.art-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;border-radius:12px;background:#faf6ef}
+.art-card:nth-child(1){transform:rotate(-8deg) translateX(-12px)}
+.art-card:nth-child(2){z-index:2;transform:translateY(-12px)}
+.art-card:nth-child(3){transform:rotate(8deg) translateX(12px)}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;text-align:center;box-shadow:0 8px 22px #493b4909}
+.feature .symbol{font-size:2rem}
+.feature h3{color:var(--purple-dark);margin:7px 0 4px;font-size:1.2rem}
+.feature p{margin:0;color:var(--muted);font-size:.95rem}
+
+.video-wrap{max-width:420px;margin:auto;padding:12px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+.video{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:17px;background:#211d25}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-actions{text-align:center;margin-top:16px}
+.watch-direct{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 18px;border-radius:12px;
+  background:#fff;border:1px solid var(--line);
+  color:var(--purple-dark);font-weight:700;font-size:.95rem;
+  text-decoration:none;box-shadow:0 4px 14px #493b490d;transition:.2s
+}
+.watch-direct:hover{transform:translateY(-2px)}
+.video-note{text-align:center;color:var(--muted);font-size:.92rem;margin:10px 0 0}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;max-width:960px;margin:auto}
+.shot{margin:0;text-align:center}
+.shot-frame{padding:8px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 28px #493b4915}
+.shot img{display:block;width:100%;height:auto;object-fit:contain;border-radius:14px}
+.shot figcaption{font-weight:700;color:var(--purple-dark);margin-top:10px;font-size:1rem}
+.shot small{color:var(--muted);font-size:.82rem}
+
+.closing{text-align:center;padding:65px 20px;background:linear-gradient(120deg,#e9e2f0,#f7ecdc 55%,#e8efe4)}
+.closing h2{font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--purple-dark);margin:0 0 8px}
+.closing p{color:var(--muted);margin:0 auto 24px}
+footer{text-align:center;padding:24px;color:#82788a;font-size:.88rem}
+
+@media(max-width:850px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .age-feature{grid-template-columns:150px minmax(0,1fr);gap:18px;padding:16px}
+}
+@media(max-width:560px){
+  html{font-size:17.5px}.wrap{width:calc(100% - 28px)}.hero{padding:28px 14px 48px}.logo{max-height:190px}
+  .section{padding:56px 0}.age-tabs{gap:8px}.age-tab{padding:9px 13px;font-size:.9rem;flex-wrap:wrap;justify-content:center}
+  .age-feature{grid-template-columns:105px minmax(0,1fr);gap:12px;padding:12px;border-radius:18px}
+  .age-feature h3{font-size:1.08rem}.age-feature p{font-size:.88rem}
+  .art-fan{min-height:190px}.art-card{padding:5px;border-radius:12px}.gallery{gap:12px}.shot-frame{padding:5px;border-radius:16px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="hero-inner wrap">
+  <img class="logo" src="./brand_01/logo.png" alt="شعار احكي لي حكاية">
+  <div class="eyebrow">حكايات صغيرة، وعوالم كبيرة</div>
+  <h1>افتحوا كتابًا… <span>وابدؤوا الحكاية!</span></h1>
+  <p class="lead">قصص أطفال مصوّرة برسوم مائية هادئة، وحكايات تُروى بصوت دافئ لترافق الصغار في لحظات القراءة والاكتشاف، وحتى قبل النوم.</p>
+  <div class="stores">
+   <a class="store" href="https://play.google.com/store/apps/details?id=com.mycompany.tellmeastory" aria-label="احصل عليه من Google Play">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1 9.2-9.2v-.2L3.7 2.3z"/><path fill="#34A853" d="m16 15.6-3.1-3.1v-.2L16 9.2l.1.1 3.6 2.1c1 .6 1 1.5 0 2.1z"/><path fill="#FBBC05" d="M16.1 15.5 12.9 12.3 3.6 21.6c.3.4.9.4 1.6 0z"/><path fill="#EA4335" d="M16.1 9.3 5.2 3.2c-.7-.4-1.3-.4-1.6 0l9.3 9.3z"/></svg>
+    <span><small>GET IT ON</small><b>Google Play</b></span>
+   </a>
+   <a class="store" href="https://www.amazon.com/gp/product/B0GZSKZRDT" aria-label="متوفر على Amazon Appstore">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF9900" d="M18.9 17.4c-2.2 1.6-5.3 2.5-8.1 2.5-3.8 0-7.3-1.4-9.9-3.8-.2-.2 0-.4.2-.3 2.8 1.6 6.3 2.6 9.9 2.6 2.4 0 5.1-.5 7.5-1.5z"/><path fill="#fff" d="M13.8 10.6c0 1.2 0 2.2-.6 3.2-.5.8-1.2 1.3-2.1 1.3-1.1 0-1.8-.9-1.8-2.1 0-2.5 2.2-2.9 4.5-2.9v.5z"/></svg>
+    <span><small>AVAILABLE AT</small><b>amazon appstore</b></span>
+   </a>
+  </div>
+  <p class="note">اختروا الحكاية، واستمتعوا بوقت لطيف يجمعكم.</p>
+ </div>
+</header>
+
+<main>
+<section class="section light" id="ages">
+ <div class="wrap">
+  <div class="head"><div class="eyebrow">حكاية تناسب كل مرحلة</div><h2>عوالم صغيرة… لكل عمر حكاية</h2><p>اختيرت الحكايات لتناسب مراحل عمرية مختلفة، من أولى خطوات الخيال إلى القصص الأطول.</p></div>
+  <div class="age-tabs">
+   <a class="age-tab" href="#age-2-4">🌱 الأبطال الصغار <span>٢–٤ سنوات</span></a>
+   <a class="age-tab" href="#age-5-9">🧭 المستكشفون الشجعان <span>٥–٩ سنوات</span></a>
+   <a class="age-tab" href="#age-10plus">✨ محبو القصص <span>١٠ سنوات فأكثر</span></a>
+  </div>
+
+  <article class="age-feature age-feature--mint" id="age-2-4">
+   <img src="./story_covers_03/age_2_4_cover.webp" alt="غلاف قصص الأبطال الصغار">
+   <div class="age-content">
+    <div class="age-label">٢–٤ سنوات</div>
+    <h3>الأبطال الصغار</h3>
+    <p>حكايات قصيرة ومبهجة، ورسوم لطيفة ترافق الصغار في اكتشافهم الأول لعالم القصص.</p>
+   </div>
+  </article>
+
+  <article class="age-feature age-feature--lilac" id="age-5-9">
+   <img src="./story_covers_03/age_5_9_cover.webp" alt="غلاف قصص المستكشفين الشجعان">
+   <div class="age-content">
+    <div class="age-label">٥–٩ سنوات</div>
+    <h3>المستكشفون الشجعان</h3>
+    <p>مغامرات وشخصيات ومواقف تفتح باب التفكير والخيال، وتدعو الأطفال إلى متابعة الأحداث.</p>
+   </div>
+  </article>
+
+  <article class="age-feature age-feature--sky" id="age-10plus">
+   <img src="./story_covers_03/age_10plus_cover.webp" alt="غلاف قصص محبو القصص">
+   <div class="age-content">
+    <div class="age-label">١٠ سنوات فأكثر</div>
+    <h3>محبو القصص</h3>
+    <p>حكايات أطول وأجواء أكثر عمقًا، للصغار الذين يحبون التوغل في عوالم الحكايات.</p>
+   </div>
+  </article>
+ </div>
+</section>
+
+<section class="section purple" id="art">
+ <div class="wrap">
+  <div class="head"><div class="eyebrow">من صفحات الحكايات</div><h2>كل رسمة تخبئ حكاية</h2><p>مشاهد مصوّرة ترافق الأحداث وتترك للخيال مساحة ليكمل التفاصيل.</p></div>
+  <div class="art-fan">
+   <div class="art-card"><img src="./story_illustrations_04/story_01.webp" alt="مشهد مرسوم من إحدى الحكايات"></div>
+   <div class="art-card"><img src="./story_illustrations_04/story_07.png" alt="مشهد مرسوم من إحدى الحكايات"></div>
+   <div class="art-card"><img src="./story_illustrations_04/story_09.jpeg" alt="مشهد مرسوم من إحدى الحكايات"></div>
+  </div>
+  <div class="features">
+   <article class="feature"><div class="symbol">🎨</div><h3>رسوم تحكي</h3><p>مشاهد مصوّرة بأجواء مائية هادئة ترافق أحداث كل حكاية.</p></article>
+   <article class="feature"><div class="symbol">🎧</div><h3>استمعوا إلى الحكاية</h3><p>سرد صوتي دافئ يساعد الطفل على متابعة القصة والاستمتاع بها.</p></article>
+   <article class="feature"><div class="symbol">🌿</div><h3>وقت يجمعكم</h3><p>لحظات قراءة واستماع يمكن أن تصبح جزءًا لطيفًا من يومكم.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section light" id="story-video">
+ <div class="wrap">
+  <div class="head"><div class="eyebrow">حكاية صغيرة… وعالَم من الخيال</div><h2>شاهدوا الحكاية</h2><p>لمحة قصيرة من أجواء «احكي لي حكاية».</p></div>
+  <div class="video-wrap"><div class="video"><iframe src="https://www.youtube.com/embed/6QaM2NCJC-g" title="فيديو قصير من احكي لي حكاية" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+  <div class="video-actions">
+   <a class="watch-direct" href="https://youtube.com/shorts/6QaM2NCJC-g" target="_blank" rel="noopener noreferrer">مشاهدة الفيديو مباشرة على YouTube ↗</a>
+  </div>
+  <p class="video-note">فيديو واحد فقط — بلا جولة تعريفية أو شرح لطريقة الاستخدام.</p>
+ </div>
+</section>
+
+<section class="section" id="screens">
+ <div class="wrap">
+  <div class="head"><div class="eyebrow">ألقوا نظرة داخل التطبيق</div><h2>هكذا تبدأ الحكاية!</h2><p>من قراءة القصة إلى مشغّل الصوت والنقاط اليومية، هذه بعض اللقطات من داخل التطبيق.</p></div>
+  <div class="gallery">
+   <figure class="shot"><div class="shot-frame"><img src="./app_screenshots_02/story_reading.webp" alt="قراءة قصة مصوّرة داخل التطبيق"></div><figcaption>قراءة قصة</figcaption><small>تصفح الحكاية والرسوم</small></figure>
+   <figure class="shot"><div class="shot-frame"><img src="./app_screenshots_02/audio_player.webp" alt="مشغل الصوت"></div><figcaption>مشغّل الصوت</figcaption><small>استمعوا وتابعوا الحكاية</small></figure>
+   <figure class="shot"><div class="shot-frame"><img src="./app_screenshots_02/free_points_daily.webp" alt="النقاط اليومية"></div><figcaption>النقاط اليومية</figcaption><small>اكتشافات صغيرة كل يوم</small></figure>
+  </div>
+ </div>
+</section>
+
+<section class="closing"><div class="wrap"><h2>أيّ حكاية سنقرأ اليوم؟</h2><p>حمّلوا التطبيق، واختاروا حكايتكم التالية.</p><div class="stores">
+<a class="store" href="https://play.google.com/store/apps/details?id=com.mycompany.tellmeastory"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1 9.2-9.2v-.2L3.7 2.3z"/><path fill="#34A853" d="m16 15.6-3.1-3.1v-.2L16 9.2l.1.1 3.6 2.1c1 .6 1 1.5 0 2.1z"/><path fill="#FBBC05" d="M16.1 15.5 12.9 12.3 3.6 21.6c.3.4.9.4 1.6 0z"/><path fill="#EA4335" d="M16.1 9.3 5.2 3.2c-.7-.4-1.3-.4-1.6 0l9.3 9.3z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
+<a class="store" href="https://www.amazon.com/gp/product/B0GZSKZRDT"><svg viewBox="0 0 24 24"><path fill="#FF9900" d="M18.9 17.4c-2.2 1.6-5.3 2.5-8.1 2.5-3.8 0-7.3-1.4-9.9-3.8-.2-.2 0-.4.2-.3 2.8 1.6 6.3 2.6 9.9 2.6 2.4 0 5.1-.5 7.5-1.5z"/><path fill="#fff" d="M13.8 10.6c0 1.2 0 2.2-.6 3.2-.5.8-1.2 1.3-2.1 1.3-1.1 0-1.8-.9-1.8-2.1 0-2.5 2.2-2.9 4.5-2.9v.5z"/></svg><span><small>AVAILABLE AT</small><b>amazon appstore</b></span></a>
+</div></div></section>
+</main>
+<footer>احكي لي حكاية · حكاية جديدة... وربما عالم جديد بالكامل 🌿<br><a href="mailto:Hikaya.support@gmail.com">Hikaya.support@gmail.com</a></footer>
+</body>
+</html>
